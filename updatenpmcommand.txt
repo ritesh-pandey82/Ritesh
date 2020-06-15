@@ -1,0 +1,23 @@
+C:\Windows\system32>npm uninstall -g angular-cli
+C:\Windows\system32>npm cache clean or npm cache verify #(if npm > 5)
+C:\Windows\system32>npm install -g @angular/cli@latest
+Now update your local project version, because cli version of your local project is having higher priority than global one when you try to execute your project.
+
+C:\apps\workspace\testProj>rm -rf node_modules
+C:\apps\workspace\testProj>npm uninstall --save-dev angular-cli
+C:\apps\workspace\testProj>npm install --save-dev @angular/cli@latest
+C:\apps\workspace\testProj>npm install
+C:\apps\workspace\testProj>ng update @angular/cli
+Step3. Verify if local project cli version now in sync with global one
+
+C:\Windows\system32>ng --version
+Angular CLI: 8.3.13
+
+C:\apps\workspace\testProj>ng --version
+Angular CLI: 8.3.13
+Step4.. Revalidate on the project
+
+C:\apps\workspace\testProj>ng serve
+Should work now
+
+share
